@@ -1116,3 +1116,11 @@ For 24/7 operation, you can run the PowerShell script as a Windows Service using
 - **TNCremo Download**: https://www.heidenhain.com/products/cnc-controls/software/tncremo
 - **Heidenhain Support**: https://www.heidenhain.com/service-support
 - **LSV2 Protocol Info**: Included in TNCremo documentation
+
+---
+
+## Contributors
+
+Thanks to everyone who has contributed to this project!
+
+- **[@npolanosky](https://github.com/npolanosky)** - Subdirectory support, overwrite handling, UNC paths, and additional LSV2 error codes (v1.2.0)

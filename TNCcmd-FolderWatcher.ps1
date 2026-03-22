@@ -111,7 +111,7 @@ $DeleteBeforeTransfer = $true    # DEL existing file on controller before PUT (e
                                  # NOTE: Overwriting files that are OPEN on the controller requires
                                  #       TNCcmdPlus (purchased USB dongle + Option #18 HEIDENHAIN DNC).
                                  #       With TNCcmd Essential, open files will retry until closed.
-$DeleteAfterTransfer = $true    # Delete source file after successful transfer
+$DeleteAfterTransfer = $false   # Delete source file after successful transfer (if false, moves to Processed/)
 $MoveToProcessedFolder = $true   # Move files to "Processed" subfolder after transfer
 $MoveToFailedFolder = $true      # Move files to "Failed" subfolder after max retries
 
