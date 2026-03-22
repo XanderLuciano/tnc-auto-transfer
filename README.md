@@ -1,7 +1,5 @@
 # Heidenhain TNCcmd Automatic File Transfer
 
-> **Version:** 1.1.0 | **Date:** 2026-03-16 | **Author:** [Xander Luciano](https://notes.xanderluciano.com/heidenhain-tnccmd-auto-transfer)
-
 Scripts for automatically sending files to Heidenhain CNC controllers over the network.
 
 ---
