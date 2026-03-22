@@ -1,1 +1,7 @@
-AI-NOTES.md
+# Ignore supporting documents
+*
+# Keep only the core project files
+!.gitignore
+!README.md
+!TNCcmd-FolderWatcher.ps1
+!TNCcmd-SendFile.bat

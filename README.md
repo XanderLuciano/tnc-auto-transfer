@@ -10,6 +10,7 @@ Scripts for automatically sending files to Heidenhain CNC controllers over the n
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 1.2.0 | 2026-03-21 | Added support for subdirectories, UNC paths, and overwriting existing programs on the machine |
 | 1.1.0 | 2026-03-16 | Added dual watcher modes (Synchronous/Asynchronous), fixed event handling reliability, improved code structure |
 | 1.0.0 | 2026-03-12 | Initial release with folder watcher and batch file scripts |
 
@@ -103,8 +104,8 @@ Edit these variables at the top of the script:
 ```powershell
 $WatcherMode = "Asynchronous"          # "Synchronous" or "Asynchronous"
 $MachineIP = "192.168.1.100"           # Your machine's IP address
-$WatchFolder = ".\WatchFolder"         # Folder to watch (relative to script)
-$DestinationFolder = "TNC:\"           # Destination on CNC machine
+$WatchFolder = ".\WatchFolder"         # Folder to watch (relative to script or absolute). Support subdirectories and preserves their structure. 
+$DestinationFolder = "TNC:\"           # Destination on CNC machine. Any watched subdirectories will be mirrored to this location. 
 $FileFilter = "*.*"                    # File types to watch
 $MoveToProcessedFolder = $true         # Move files after successful transfer
 $MoveToFailedFolder = $true            # Move files to Failed after max retries
@@ -230,6 +231,9 @@ $ConnectionTimeout = 30
 # - Use $PSScriptRoot for the same folder as the script
 # - Or specify a full path like "C:\NCPrograms\ToMachine"
 $WatchFolder = ".\WatchFolder"
+# - To include subdirectories and preserve their structure, set $IncludeSubdirectories = $true
+# - To enable overwrite of existing files on the control (ex. for updating an existing program) use $DeleteBeforeTransfer  = $true 
+
 
 # File filter - which files to watch for
 # - "*.h" for Heidenhain NC programs only
